@@ -5,6 +5,10 @@ class brand(models.Model):
     brandId = models.AutoField(primary_key=True)
     brand_name = models.CharField(max_length=100)
 
+    #This is a string representation of the brands
+    def __str__(self):
+        return (f"brand_id: {self.brandId}, brand name: {self.brand_name}")
+
 class vendor(models.Model):
     vendorId = models.AutoField(primary_key=True)
     vendor_name = models.CharField(max_length=100)

@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from .models import brand
 # Create your views here.
 def index(request):
-    return HttpResponse("Warehouse Inventory Management System")
+    brands = brand.objects.all()
+    context = {'brands': brands}
+    return render(request, 'warehouse/index.html', context)
